@@ -1,0 +1,17 @@
+<p>home works!</p>
+
+<form [formGroup]="loginForm">
+    <label>
+        USERNAME:
+        <input type="text" formControlName="userName">
+    </label>
+            
+    <label>
+        PASSWORD:
+        <input type="text" formControlName="passWord">
+    </label>
+            
+    <div>
+        <button (click)="loginClick($event)">OK</button>
+    </div>    
+</form>
