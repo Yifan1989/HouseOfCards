@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
         userName: new FormControl(''),
         passWord: new FormControl(''),
     });
-    private appS = new AppSettings();
+    private appSettings = new AppSettings();
 
     constructor() { }
 
@@ -21,6 +21,6 @@ export class HomeComponent implements OnInit {
     public loginClick(): void{
         console.log(this.loginForm.value.userName);
         console.log(this.loginForm.value.passWord);
-        console.log(this.appS.getExample());
+        console.log(this.appSettings.getExample());
     }
 }
