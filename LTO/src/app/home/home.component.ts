@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { AppSettings } from '../../models/app-settings';
 
 @Component({
     selector: 'app-home',
@@ -11,15 +12,15 @@ export class HomeComponent implements OnInit {
         userName: new FormControl(''),
         passWord: new FormControl(''),
     });
+    private appS = new AppSettings();
 
     constructor() { }
 
-    ngOnInit(): void{
-        
-    }
+    ngOnInit(): void{ }
 
     public loginClick(): void{
         console.log(this.loginForm.value.userName);
         console.log(this.loginForm.value.passWord);
+        console.log(this.appS.getExample());
     }
 }
