@@ -13,5 +13,9 @@
             
     <div>
         <button (click)="loginClick($event)">OK</button>
-    </div>    
+    </div>
+    
+    <div>
+        <button *ngIf="isUserLogin" (click)="logOutClick($event)">Log Out</button>
+    </div>
 </form>

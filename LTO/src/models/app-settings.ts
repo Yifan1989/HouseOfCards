@@ -23,7 +23,6 @@ export class AppSettings implements OnInit {
     public setCurrentUser(name: string): void{
         this.currentUserName = name;
         this.checkCurrentUser = true;
-        console.log(this.checkCurrentUser);
     }
 
     public getCheckCurrentUser(): boolean{

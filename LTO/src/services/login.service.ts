@@ -5,5 +5,6 @@ import { BehaviorSubject } from 'rxjs';
     providedIn: 'root'
 })
 export class LoginService {
+    public logInCheck: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
     constructor() {}
 }
