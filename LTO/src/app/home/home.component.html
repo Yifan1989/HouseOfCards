@@ -16,6 +16,6 @@
     </div>
     
     <div>
-        <button *ngIf="isUserLogin" (click)="logOutClick($event)">Log Out</button>
+        <button *ngIf="this.logInService.logInCheck" (click)="logOutClick($event)">Log Out</button>
     </div>
 </form>

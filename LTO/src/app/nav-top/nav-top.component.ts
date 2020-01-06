@@ -9,16 +9,14 @@ import { LoginService } from '../../services/login.service';
 })
 export class NavTopComponent implements OnInit {
     private appSettings = new AppSettings();
-    
-    private userLoggedIn: boolean = true;
 
-    constructor() { }
+    constructor(private logInService: LoginService) { }
 
     ngOnInit() {
         
     }
 
     public logOut(): void{
-
+        this.logInService.logInCheck = false;
     }
 }
