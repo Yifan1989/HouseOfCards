@@ -1,17 +1,32 @@
 import { sharedStylesheetJitUrl } from '@angular/compiler';
-import { OnInit } from '@angular/core';
+import { OnInit, NgModule } from '@angular/core';
+import { NgModel } from '@angular/forms';
 
 
 export class AppSettings implements OnInit {
-    // public resultValue: string;
     private exampleVariable: string = 'Frank Underwood';
+    private currentUserName: string;
+    public checkCurrentUser: boolean = false;
 
     constructor() { }
 
     ngOnInit(): void{ }
 
     public getExample(): string{
-        // this.resultValue = this.exampleVariable;
         return this.exampleVariable;
+    }
+
+    public getCurrentUser(): string{
+        return this.currentUserName;
+    }
+
+    public setCurrentUser(name: string): void{
+        this.currentUserName = name;
+        this.checkCurrentUser = true;
+        console.log(this.checkCurrentUser);
+    }
+
+    public getCheckCurrentUser(): boolean{
+        return this.checkCurrentUser;
     }
 }

@@ -19,6 +19,9 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     ReactiveFormsModule
   ],
+  exports: [
+    NavTopComponent
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

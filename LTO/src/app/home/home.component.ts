@@ -19,8 +19,7 @@ export class HomeComponent implements OnInit {
     ngOnInit(): void{ }
 
     public loginClick(): void{
-        console.log(this.loginForm.value.userName);
-        console.log(this.loginForm.value.passWord);
-        console.log(this.appSettings.getExample());
+        this.appSettings.setCurrentUser(this.loginForm.value.userName);
+        console.log(this.appSettings.getCurrentUser())
     }
 }
