@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { AppSettings } from '../../models/app-settings';
 import { LoginService } from '../../services/login.service';
+import { NavTopComponent } from '../nav-top/nav-top.component';
 
 @Component({
     selector: 'app-home',
@@ -9,6 +10,8 @@ import { LoginService } from '../../services/login.service';
     styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
+    private navtopCom: NavTopComponent;
 
     private loginForm = new FormGroup({
         userName: new FormControl(''),
@@ -27,5 +30,10 @@ export class HomeComponent implements OnInit {
 
     public logOutClick(): void{
         this.logInService.logInCheck = false;
+    }
+
+    public getShipments(): void{
+        this.navtopCom = new NavTopComponent(this.logInService);
+        this.navtopCom.retrieveShipments();
     }
 }

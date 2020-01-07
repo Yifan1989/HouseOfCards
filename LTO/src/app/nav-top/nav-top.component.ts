@@ -19,4 +19,8 @@ export class NavTopComponent implements OnInit {
     public logOut(): void{
         this.logInService.logInCheck = false;
     }
+
+    public retrieveShipments(): void{
+        console.log("if you get me, you win!");
+    }
 }
