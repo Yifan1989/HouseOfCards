@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { NavTopComponent } from './nav-top/nav-top.component';
 import { HomeComponent } from './home/home.component';
 import { LoginService } from '../services/login.service';
+import { NavBottomComponent } from './nav-bottom/nav-bottom.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavTopComponent,
-    HomeComponent
+    HomeComponent,
+    NavBottomComponent
   ],
   imports: [
     BrowserModule,
@@ -27,3 +29,10 @@ import { LoginService } from '../services/login.service';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+/*
+app.module.ts
+app.module.serve.ts
+app.module.browser.ts
+app.module.shared.ts
+*/
