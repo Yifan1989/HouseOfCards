@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
     ngOnInit(): void{ }
 
     public loginClick(): void{
-        this.logInService.logInCheck = true;
+        // this.logInService.logInCheck = true;
     }
 
     public logOutClick(): void{
