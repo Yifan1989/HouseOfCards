@@ -21,6 +21,6 @@ export class NavTopComponent implements OnInit {
     }
 
     public retrieveShipments(): void{
-        console.log("if you get me, you win!");
+        // console.log("if you get me, you win!");
     }
 }
