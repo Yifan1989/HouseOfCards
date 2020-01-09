@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     ngOnInit(): void{ }
 
     ngOnDestroy(): void{
-
+        this.appSettings.testSubject.complete();
     }
 
     public loginClick(): void{
