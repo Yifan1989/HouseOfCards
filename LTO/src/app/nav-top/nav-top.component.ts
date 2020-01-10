@@ -9,7 +9,8 @@ import { LoginService } from '../../services/login.service';
 })
 export class NavTopComponent implements OnInit {
     private appSettings = new AppSettings();
-
+    
+    private currentUserName = this.logInService.loginInStatus.getValue();
     constructor(private logInService: LoginService) { }
 
     ngOnInit() {
@@ -22,5 +23,6 @@ export class NavTopComponent implements OnInit {
 
     public retrieveShipments(): void{
         // console.log("if you get me, you win!");
+        console.log(this.currentUserName);
     }
 }

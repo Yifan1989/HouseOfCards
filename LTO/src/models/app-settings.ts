@@ -1,7 +1,7 @@
 import { sharedStylesheetJitUrl } from '@angular/compiler';
 import { OnInit, NgModule } from '@angular/core';
 import { NgModel } from '@angular/forms';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 
 export class AppSettings implements OnInit {
@@ -9,7 +9,7 @@ export class AppSettings implements OnInit {
     private currentUserName: string;
     public checkCurrentUser: boolean = false;
 
-    public testSubject = new Subject<number>();
+    
 
     constructor() { }
 

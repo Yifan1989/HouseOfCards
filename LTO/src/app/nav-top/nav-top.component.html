@@ -4,5 +4,13 @@
 
 
 <p>Hello!</p>
+<p>{{currentUserName}}</p>
+<p>See ya!</p>
+
+
+
+
+
 <button *ngIf="this.logInService.logInCheck" (click)="logOut($event)">Log Out</button>
+<button (click)="retrieveShipments($event)">Name</button>
 

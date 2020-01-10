@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { AppSettings } from '../../models/app-settings';
 import { LoginService } from '../../services/login.service';
 import { NavTopComponent } from '../nav-top/nav-top.component';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -11,8 +12,9 @@ import { NavTopComponent } from '../nav-top/nav-top.component';
     styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit, OnDestroy {
+    private currentUser: string;
+    private subUserInfor: Subscription;
     
-    private navtopCom: NavTopComponent;
 
     private loginForm = new FormGroup({
         userName: new FormControl(''),
@@ -26,13 +28,15 @@ export class HomeComponent implements OnInit, OnDestroy {
     ngOnInit(): void{ }
 
     ngOnDestroy(): void{
-        this.appSettings.testSubject.complete();
+        if(this.subUserInfor) this.subUserInfor.unsubscribe();
     }
 
     public loginClick(): void{
         // this.logInService.logInCheck = true;
-        this.appSettings.testSubject.subscribe((value) => console.log("This is the subject test: " + value));
-        this.appSettings.testSubject.next(111);
+        this.currentUser = this.loginForm.value.userName;
+        this.logInService.loginInStatus.next(this.currentUser);
+
+        this.subUserInfor = this.logInService.loginInStatus.subscribe(name => name = this.currentUser);
     }
 
     public logOutClick(): void{
@@ -40,7 +44,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
 
     public getShipments(): void{
-        this.navtopCom = new NavTopComponent(this.logInService);
-        this.navtopCom.retrieveShipments();   
+        console.log(this.loginForm.value.userName);  
     }
 }
