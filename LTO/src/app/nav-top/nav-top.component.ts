@@ -9,8 +9,10 @@ import { LoginService } from '../../services/login.service';
 })
 export class NavTopComponent implements OnInit {
     private appSettings = new AppSettings();
-    
-    private currentUserName = this.logInService.loginInStatus.getValue();
+    private userLogedIn: boolean = this.logInService.getLogInCheck();
+    private currentUserName: string = this.logInService.getUserName();
+
+
     constructor(private logInService: LoginService) { }
 
     ngOnInit() {
@@ -18,11 +20,10 @@ export class NavTopComponent implements OnInit {
     }
 
     public logOut(): void{
-        this.logInService.logInCheck = false;
+        // this.logInService.logInCheck = false;
     }
 
     public retrieveShipments(): void{
-        // console.log("if you get me, you win!");
-        console.log(this.currentUserName);
+        console.log("if you get me, you win!");
     }
 }

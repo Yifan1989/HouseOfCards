@@ -5,19 +5,27 @@ import { Observable, BehaviorSubject, Subject } from 'rxjs';
     providedIn: 'root'
 })
 export class LoginService {
-    public logInCheck: boolean = false;
+    private logInCheck: boolean = false;
+    private currentUserName: string = "";
     
 
-    public loginInStatus = new BehaviorSubject<string>("a user");
-    public currentUser = this.loginInStatus.asObservable();
+    //public loginInStatus: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
     
     constructor() {}
 
-    public getResults(): boolean{
+    public getLogInCheck(): boolean{
         return this.logInCheck;
     }
 
-    public setCurrentUser(user: string): void{
-        
+    public setLogInCheck(checkLogin: boolean): void{
+        this.logInCheck = checkLogin;
+    }
+    
+    public getUserName(): string{
+        return this.currentUserName;
+    }
+
+    public setUserName(user: string): void{
+        this.currentUserName = user;
     }
 }

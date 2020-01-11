@@ -14,6 +14,8 @@ import { Subscription } from 'rxjs';
 export class HomeComponent implements OnInit, OnDestroy {
     private currentUser: string;
     private subUserInfor: Subscription;
+
+    private checkUserLogin: boolean = false;
     
 
     private loginForm = new FormGroup({
@@ -23,27 +25,26 @@ export class HomeComponent implements OnInit, OnDestroy {
     private appSettings = new AppSettings();
 
     constructor(private logInService: LoginService){
+        
     }
 
     ngOnInit(): void{ }
 
     ngOnDestroy(): void{
-        if(this.subUserInfor) this.subUserInfor.unsubscribe();
+        //if(this.subUserInfor) this.subUserInfor.unsubscribe();
     }
 
     public loginClick(): void{
-        // this.logInService.logInCheck = true;
-        this.currentUser = this.loginForm.value.userName;
-        this.logInService.loginInStatus.next(this.currentUser);
-
-        this.subUserInfor = this.logInService.loginInStatus.subscribe(name => name = this.currentUser);
+        let user = this.loginForm.value.userName;
+        this.logInService.setLogInCheck(true);
+        this.logInService.setUserName(user);  
     }
 
     public logOutClick(): void{
-        this.logInService.logInCheck = false;
+        this.logInService.setLogInCheck(false);
     }
 
     public getShipments(): void{
-        console.log(this.loginForm.value.userName);  
+        console.log(this.loginForm.value.userName);
     }
 }

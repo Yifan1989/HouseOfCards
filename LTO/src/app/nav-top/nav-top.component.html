@@ -3,14 +3,16 @@
 <!-- <button *ngIf="false" (click)="logOut($event)">Log Out</button> -->
 
 
-<p>Hello!</p>
-<p>{{currentUserName}}</p>
-<p>See ya!</p>
+<div *ngIf="this.logInService.logInCheck">
+    <p>Hello! {{this.logInService.currentUserName}}</p>
+    <p>See ya!</p>
+</div>
 
 
 
 
 
-<button *ngIf="this.logInService.logInCheck" (click)="logOut($event)">Log Out</button>
-<button (click)="retrieveShipments($event)">Name</button>
+
+<!-- <button *ngIf="this.logInService.logInCheck" (click)="logOut($event)">Log Out</button> -->
+<!-- <button (click)="retrieveShipments($event)">Name</button> -->
 
