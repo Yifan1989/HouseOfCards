@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginService } from '../services/login.service';
 import { NavBottomComponent } from './nav-bottom/nav-bottom.component';
 import { NavLeftComponent } from './nav-left/nav-left.component';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NavLeftComponent } from './nav-left/nav-left.component';
     NavTopComponent,
     HomeComponent,
     NavBottomComponent,
-    NavLeftComponent
+    NavLeftComponent,
+    CreateUserComponent
   ],
   imports: [
     BrowserModule,

@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.logInService.setLogInCheck(false);
     }
 
-    public getShipments(): void{
-        console.log(this.loginForm.value.userName);
+    public createUser(): void{
+        
     }
 }
