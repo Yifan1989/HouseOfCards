@@ -8,13 +8,15 @@ import { NavTopComponent } from './nav-top/nav-top.component';
 import { HomeComponent } from './home/home.component';
 import { LoginService } from '../services/login.service';
 import { NavBottomComponent } from './nav-bottom/nav-bottom.component';
+import { NavLeftComponent } from './nav-left/nav-left.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavTopComponent,
     HomeComponent,
-    NavBottomComponent
+    NavBottomComponent,
+    NavLeftComponent
   ],
   imports: [
     BrowserModule,
