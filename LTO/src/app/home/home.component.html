@@ -1,29 +1,32 @@
-
-
-<form [formGroup]="loginForm">
-    <label>
-        USERNAME:
-        <input type="text" formControlName="userName">
-    </label>
+<body>
+    <div class="home">
+        <form [formGroup]="loginForm">
+            <label>
+                USERNAME:
+                <input type="text" formControlName="userName">
+            </label>
+                    
+            <label>
+                PASSWORD:
+                <input type="text" formControlName="passWord">
+            </label>
+                    
+            <div>
+                <button (click)="loginClick($event)">OK</button>
+            </div>
             
-    <label>
-        PASSWORD:
-        <input type="text" formControlName="passWord">
-    </label>
-            
-    <div>
-        <button (click)="loginClick($event)">OK</button>
-    </div>
-    
-    <div>
-        <button *ngIf="this.logInService.logInCheck" (click)="logOutClick($event)">Log Out</button>
-    </div>
-</form>
+            <div>
+                <button *ngIf="this.logInService.logInCheck" (click)="logOutClick($event)">Log Out</button>
+            </div>
+        </form>
 
 
-<div>
-    <button (click)="getShipments()">Big Test</button>
-</div>
+        <div>
+            <button (click)="getShipments()">Big Test</button>
+        </div>
+    </div>  
+</body>
+
 
 
 
