@@ -4,6 +4,7 @@ import { AppSettings } from '../../models/app-settings';
 import { LoginService } from '../../services/login.service';
 import { NavTopComponent } from '../nav-top/nav-top.component';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -24,9 +25,10 @@ export class HomeComponent implements OnInit, OnDestroy {
     });
     private appSettings = new AppSettings();
 
-    constructor(private logInService: LoginService){
-        
-    }
+    constructor(
+        private logInService: LoginService,
+        private router: Router
+    ){}
 
     ngOnInit(): void{ }
 
