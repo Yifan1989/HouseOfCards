@@ -8,6 +8,9 @@ export class LoginService {
     private logInCheck: boolean = false;
     private currentUserName: string = "";
     public homeOrCreateUser: boolean = true;
+    public showAccount: boolean = false;
+    public showContact: boolean = false;
+    public showDashboard: boolean = false;
 
     constructor() {}
 

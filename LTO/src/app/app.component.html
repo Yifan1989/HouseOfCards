@@ -17,9 +17,18 @@
     </div>
     
     <div *ngIf="!logInService.homeOrCreateUser">
-        <router-outlet></router-outlet>
+        <app-create-user></app-create-user>
     </div>
-    
+
+    <div *ngIf="logInService.showContact">
+        <app-contact></app-contact>
+    </div> 
+    <div *ngIf="logInService.showAccount">
+        <app-account></app-account>
+    </div> 
+    <div *ngIf="logInService.showDashboard">
+        <app-dashboard></app-dashboard>
+    </div> 
 </div>
 
 
