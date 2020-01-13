@@ -4,7 +4,7 @@ import { AppSettings } from '../../models/app-settings';
 import { LoginService } from '../../services/login.service';
 import { NavTopComponent } from '../nav-top/nav-top.component';
 import { Subscription } from 'rxjs';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 
 
 @Component({
@@ -47,6 +47,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
 
     public createUser(): void{
-        
+        this.logInService.homeOrCreateUser = false;
+        // this.router.navigateByUrl("/createUser");
     }
 }

@@ -13,27 +13,13 @@
                     
             <div>
                 <button (click)="loginClick($event)">OK</button>
+                <button (click)="createUser()">Create New Account</button>
             </div>
             
             <div>
                 <button *ngIf="this.logInService.logInCheck" (click)="logOutClick($event)">Log Out</button>
             </div>
         </form>
-
-
-        <div>
-            <button (click)="createUser()">Create New Account</button>
-        </div>
-
-
-
-
-      
-
-
-
-
-
 
     </div>  
 

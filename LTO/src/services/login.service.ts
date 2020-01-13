@@ -7,9 +7,8 @@ import { Observable, BehaviorSubject, Subject } from 'rxjs';
 export class LoginService {
     private logInCheck: boolean = false;
     private currentUserName: string = "";
-    
 
-    //public loginInStatus: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+    public homeOrCreateUser: boolean = true;
     
     constructor() {}
 

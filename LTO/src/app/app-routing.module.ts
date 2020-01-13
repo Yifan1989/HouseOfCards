@@ -7,7 +7,8 @@ import { CreateUserComponent } from './create-user/create-user.component';
 
 
 const routes: Routes = [
-    
+    { path: "home", component: HomeComponent},
+    { path: "createUser", component: CreateUserComponent}
 ];
 
 @NgModule({

@@ -10,5 +10,16 @@
 </div>
 
 
-<app-home></app-home>
+
+<div>
+    <div *ngIf="logInService.homeOrCreateUser">
+        <app-home></app-home>
+    </div>
+    
+    <div *ngIf="!logInService.homeOrCreateUser">
+        <router-outlet></router-outlet>
+    </div>
+    
+</div>
+
 
